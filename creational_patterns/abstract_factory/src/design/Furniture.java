@@ -1,4 +1,4 @@
-package creational_patterns.abstract_factory.design;
+package src.design;
 
 interface Furniture {
     void display();

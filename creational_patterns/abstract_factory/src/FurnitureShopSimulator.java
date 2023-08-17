@@ -1,5 +1,6 @@
-import creational_patterns.abstract_factory.design.*;
-import creational_patterns.abstract_factory.factory.*;
+package src;
+import src.design.*;
+import src.factory.*;
 
 public class FurnitureShopSimulator {
     public static void main(String[] args) {

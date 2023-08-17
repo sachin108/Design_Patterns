@@ -1,6 +1,6 @@
-package creational_patterns.abstract_factory.factory;
+package src.factory;
 
-import creational_patterns.abstract_factory.design.*;
+import src.design.*;
 
 // Abstract Factory
 interface FurnitureFactory {

@@ -1,7 +1,7 @@
-package creational_patterns.abstract_factory.design;
+package src.design;
 
 // Concrete Products: Chair, Sofa, CoffeeTable
-class CoffeeTable implements Furniture {
+public class CoffeeTable implements Furniture {
     private String style;
 
     public CoffeeTable(String style) {

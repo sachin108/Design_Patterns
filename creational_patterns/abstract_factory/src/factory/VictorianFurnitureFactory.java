@@ -1,8 +1,9 @@
-package creational_patterns.abstract_factory.factory;
+package src.factory;
 
-import creational_patterns.abstract_factory.design.*;
-class ArtDecoFurnitureFactory implements FurnitureFactory {
-    String style="Art Deco";
+import src.design.*;
+
+class VictorianFurnitureFactory implements FurnitureFactory {
+    String style = "Victorian";
     @Override
     public Chair createChair() {
         return new Chair(style);
