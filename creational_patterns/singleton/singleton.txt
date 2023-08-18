@@ -1,0 +1,15 @@
+The Singleton Pattern is a creational design pattern that ensures a class has only one instance and 
+provides a global point of access to that instance. It is commonly used when you want to have a 
+single instance of a class that controls some resource, manages a shared resource, or coordinates 
+actions within a system.
+
+Key Features of the Singleton Pattern:
+
+    Private Constructor: The class should have a private constructor to prevent direct instantiation 
+    from other classes.
+
+    Private Static Instance: The class should have a private static instance variable that holds the 
+    single instance of the class.
+
+    Public Static Method: The class should provide a public static method that allows clients to access 
+    the instance. This method ensures that only one instance is created and returned.
