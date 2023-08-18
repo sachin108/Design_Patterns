@@ -1,6 +1,6 @@
 package src.design;
 
 //Common interface for transportation
-interface Transportation {
+public interface Transportation {
     void deliver();
 }

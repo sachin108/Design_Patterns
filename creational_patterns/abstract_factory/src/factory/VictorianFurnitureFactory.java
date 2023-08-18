@@ -2,7 +2,7 @@ package src.factory;
 
 import src.design.*;
 
-class VictorianFurnitureFactory implements FurnitureFactory {
+public class VictorianFurnitureFactory implements FurnitureFactory {
     String style = "Victorian";
     @Override
     public Chair createChair() {

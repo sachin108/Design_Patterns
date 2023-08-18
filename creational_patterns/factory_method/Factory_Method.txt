@@ -2,6 +2,9 @@ The factory design pattern is used when we have a superclass with multiple sub-c
 on input, we need to return one of the sub-class. This pattern takes out the responsibility of the 
 instantiation of a class from the client program to the factory class. 
 
+Abstract Factory pattern is “factory of factories” and can be easily extended to accommodate more 
+products.
+
 Factory Method is a creational design pattern that provides an interface for creating objects 
 in a superclass, but allows subclasses to alter the type of objects that will be created.
 

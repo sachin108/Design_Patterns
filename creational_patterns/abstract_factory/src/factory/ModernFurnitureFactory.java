@@ -3,7 +3,7 @@ package src.factory;
 import src.design.*;
 
 // Concrete Factories: ModernFurnitureFactory, VictorianFurnitureFactory, ArtDecoFurnitureFactory
-class ModernFurnitureFactory implements FurnitureFactory {
+public class ModernFurnitureFactory implements FurnitureFactory {
     String style = "Modern";
     @Override
     public Chair createChair() {

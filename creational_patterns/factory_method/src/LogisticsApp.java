@@ -1,6 +1,5 @@
 package src;
-import src.design.Transportation;
-import src.design.TransportationFactory;
+import src.design.*;
 
 // Client code
 public class LogisticsApp {

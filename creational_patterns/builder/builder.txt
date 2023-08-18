@@ -1,0 +1,70 @@
+Builder focuses on constructing complex objects step by step. Abstract Factory specializes in creating families of related 
+objects. Abstract Factory returns the product immediately, whereas Builder lets you run some additional construction steps 
+before fetching the product.
+
+Builder pattern was introduced to solve some of the problems with Factory and Abstract Factory design patterns when the Object 
+contains a lot of attributes. There are three major issues with Factory and Abstract Factory design patterns when the Object 
+contains a lot of attributes:
+
+    Too Many arguments to pass from client program to the Factory class that can be error prone because most of the time, the type 
+    of arguments are same and from client side its hard to maintain the order of the argument.
+
+    Some of the parameters might be optional but in Factory pattern, we are forced to send all the parameters and optional 
+    parameters need to send as NULL.
+
+Builder pattern solves the issue with large number of optional parameters and inconsistent state by providing a way to build 
+the object step-by-step and provide a method that will actually return the final Object.
+
+
+Problem
+
+    For example, let’s think about how to create a House object. To build a simple house, we need to construct four 
+    walls and a floor, install a door, fit a pair of windows, and build a roof. But what if we want a bigger, brighter 
+    house, with a backyard and other goodies (like a heating system, plumbing, and electrical wiring)?
+
+    The simplest solution is to extend the base House class and create a set of subclasses to cover all combinations of 
+    the parameters. But eventually we’ll end up with a considerable number of subclasses. Any new parameter, such as the 
+    porch style, will require growing this hierarchy even more.
+
+    There’s another approach that doesn’t involve breeding subclasses. we can create a giant constructor right in the base 
+    House class with all possible parameters that control the house object. While this approach indeed eliminates the need 
+    for subclasses, it creates another problem.
+
+        In most cases most of the parameters will be unused, making the constructor calls pretty ugly. For instance, only a 
+        fraction of houses have swimming pools, so the parameters related to swimming pools will be useless nine times out of ten.
+
+
+Solution
+
+    The Builder pattern suggests that we extract the object construction code out of its own class and move it to separate 
+    objects called builders.
+
+    The pattern organizes object construction into a set of steps (buildWalls, buildDoor, etc.). To create an object, we 
+    execute a series of these steps on a builder object. The important part is that we don’t need to call all of the steps. 
+    We can call only those steps that are necessary for producing a particular configuration of an object.
+
+    Some of the construction steps might require different implementation when we need to build various representations of 
+    the product. For example, walls of a cabin may be built of wood, but the castle walls must be built with stone.
+
+    In this case, we can create several different builder classes that implement the same set of building steps, but in 
+    a different manner. Then we can use these builders in the construction process (i.e., an ordered set of calls to the 
+    steps) to produce different kinds of objects.
+
+
+Many designs start by using Factory Method (less complicated and more customizable via subclasses) and evolve toward Abstract 
+Factory, Prototype, or Builder (more flexible, but more complicated).
+
+Key Components of the Builder Pattern:
+
+    Product: This is the complex object you want to create. It may have many optional parts or configurations.
+
+    Builder: The Builder interface defines the steps required to construct the product. It has methods for each part or 
+    configuration of the product. Concrete builder classes implement this interface to provide specific implementations 
+    for building the product.
+
+    Concrete Builders: These classes implement the Builder interface and provide specific implementations for each step of 
+    the construction process. They know how to build the product using a consistent interface.
+
+    Director: The Director class is optional and responsible for managing the construction process. It uses a Builder to 
+    construct the product by calling the builder's methods in the appropriate order. The Director class is useful when you
+    want to delegate the construction process to a single point and follow a predefined order of building steps.
